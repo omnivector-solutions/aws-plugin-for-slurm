@@ -280,17 +280,6 @@ def update_node(node_name, parameters):
     run_scommand('scontrol', arguments)
     
     
-# Call sinfo and return node status for a list of nodes
-def get_node_state(hostlist):
-    
-    try:
-        cmd = [scontrol_path, '-n', ','.join(hostlist), '-N', '-o', '"%N %t"']
-        return run_scommand('sinfo', arguments)
-    except Exception as e:
-        logger.critical('Failed to retrieve node state - %s' %e)
-        sys.exit(1)
-
-
 # Return boto3 client
 def get_ec2_client(nodegroup):
     
