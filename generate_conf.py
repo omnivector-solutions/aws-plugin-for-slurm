@@ -61,7 +61,7 @@ with open(gres_filename, 'w') as g:
                         typestring="Type=%s" % fields[1]
                         qty=fields[2]
                     else:
-                        assert false, "Invalid GRES field in %" % nodegroup
+                        assert False, "Invalid GRES field in %" % nodegroup
 
                     if name.upper() == "GPU":
                         qty=int(qty)
